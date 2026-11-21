@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MUZA.AI</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #080d1b;
+  color: white;
+  text-align: center;
+}
+header {
+  padding: 25px;
+  color: #55d6a2;
+  font-size: 28px;
+  font-weight: bold;
+}
+main {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 20px;
+}
+h1 {
+  font-size: 32px;
+}
+h1 span {
+  color: #55d6a2;
+}
+p {
+  color: #b7c2d5;
+  line-height: 1.6;
+}
+.box {
+  background: #111b30;
+  padding: 22px;
+  border-radius: 15px;
+  margin-top: 30px;
+}
+select, textarea, button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+select, textarea {
+  background: #080d1b;
+  color: white;
+  border: 1px solid #354563;
+}
+textarea {
+  height: 110px;
+}
+button {
+  background: #55d6a2;
+  color: #080d1b;
+  border: none;
+  font-weight: bold;
+}
+#resultado {
+  margin-top: 20px;
+  color: #55d6a2;
+}
+footer {
+  padding: 30px;
+  color: #8995a9;
+}
+</style>
+</head>
+<body>
+
+<header>MUZA.AI</header>
+
+<main>
+<h1>Cria conteúdos com <span>IA</span></h1>
+<p>Transforma as tuas ideias em conteúdos criativos com inteligência artificial.</p>
+
+<div class="box">
+<h2>O que vamos criar?</h2>
+
+<select id="tipo">
+<option>Vídeo infantil e animação 3D</option>
+<option>Vídeo para TikTok</option>
+<option>Vídeo para YouTube</option>
+<option>Publicidade</option>
+<option>Imagem com IA</option>
+<option>Histórias e textos</option>
+</select>
+
+<select id="idioma">
+<option>Português</option>
+<option>English</option>
+<option>Français</option>
+<option>Español</option>
+</select>
+
+<textarea id="ideia" placeholder="Descreve a tua ideia..."></textarea>
+
+<button onclick="criar()">Criar conteúdo</button>
+
+<div id="resultado"></div>
+</div>
+</main>
+
+<footer>MUZA.AI © 2026</footer>
+
+<script>
+function criar() {
+  var ideia = document.getElementById("ideia").value;
+  var tipo = document.getElementById("tipo").value;
+  var idioma = document.getElementById("idioma").value;
+
+  if (ideia.trim() === "") {
+    document.getElementById("resultado").innerText =
+      "Escreve primeiro a tua ideia.";
+    return;
+  }
+
+  document.getElementById("resultado").innerText =
+    "Ideia registada! Tipo: " + tipo +
+    " | Idioma: " + idioma +
+    ". A integração da IA será feita na próxima etapa.";
+}
+</script>
+
+</body>
+</html>
